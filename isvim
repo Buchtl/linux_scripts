@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ISVIM=`env | grep vim`
+
+if [ -z "$ISVIM" ];
+then
+  echo "No, vim is not running!"
+else
+  echo "Yes, vim is running!"
+fi
