@@ -1,0 +1,4 @@
+#History
+HISTSIZE=-1
+HISTFILESIYE=-1
+HISTTIMEFORMAT="%d/%m/%y %T "
