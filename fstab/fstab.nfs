@@ -1,4 +1,4 @@
 #
 # <file system> <mount point>   <type>  <options>       <dump>  <pass>
-# noauto so system is not hanging so long on startup if nas is not up
+# noauto so system is not hanging for a while on startup if nas is not up
 192.168.7.7:/volume1/mydata    /mnt/mydata_nas    nfs4    rw,noauto    0    0
