@@ -1,4 +1,5 @@
 #
 # <file system> <mount point>   <type>  <options>       <dump>  <pass>
 # noauto so system is not hanging for a while on startup if nas is not up (/volume1/... -> Synology Disk Station)
+# Username:Password of logged in user has to match with an authorized user at the Disk Station
 192.168.7.7:/volume1/mydata    /mnt/mydata_nas    nfs4    rw,noauto    0    0
