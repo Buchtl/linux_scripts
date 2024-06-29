@@ -6,5 +6,9 @@
   "second": {
     "path": "/mnt/path",
     "type": "local"
+  },
+  "third": {
+    "path": "/mnt/path",
+    "type": "local"
   }
 }
