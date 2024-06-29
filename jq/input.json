@@ -1,0 +1,10 @@
+{
+  "first": {
+    "path": "",
+    "type": "server"
+  },
+  "second": {
+    "path": "/mnt/path",
+    "type": "local"
+  }
+}
