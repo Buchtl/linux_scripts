@@ -1,10 +1,16 @@
 #!/bin/bash
-container_id=$(docker ps --filter "label=com.docker.swarm.service.name=grafana_keycloak" --format "{{.ID}}")
-container_name=$(docker ps --filter "label=com.docker.swarm.service.name=grafana_keycloak" --format "{{.Names}}")
+echo " #################### export realm ####################"
+service_name="keycloak_keycloak"
+realm_name="charger"
 
-docker exec -it $container_name /opt/keycloak/bin/kc.sh export \
+container_id=$(docker ps --filter "label=com.docker.swarm.service.name=$service_name" --format "{{.ID}}")
+container_name=$(docker ps --filter "label=com.docker.swarm.service.name=$service_name" --format "{{.Names}}")
+
+echo "From $container_name with id $container_id export realm $realm_name"
+
+docker exec $container_name /opt/keycloak/bin/kc.sh export \
   --dir /opt/keycloak/data/export \
-  --realm grafana \
+  --realm $realm_name \
   --users realm_file
 
-docker exec -it $container_name cat /opt/keycloak/data/export/grafana-realm.json > ./config/keycloak/grafana-realm.json
+docker exec $container_name cat /opt/keycloak/data/export/$realm_name-realm.json > /tmp/$realm_name.json
